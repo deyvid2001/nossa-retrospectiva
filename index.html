@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Nossa História - Retrospectiva</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+    <style>
+        :root {
+            --sunflower-yellow: #FFECB3;
+            --sunflower-gold: #B8860B;
+            --warm-cream: #FFFAF0;
+            --pastel-cream: #FFFDF5;
+            --brown-soil: #3E2723;
+        }
+
+        /* Configurações Gerais */
+        body {
+            background-color: var(--pastel-cream);
+            font-family: "Quicksand", sans-serif;
+            color: var(--brown-soil);
+            margin: 0;
+            padding: 0;
+            background-image: radial-gradient(#F3E5AB 0.5px, transparent 0.5px);
+            background-size: 40px 40px;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .font-romantic { font-family: 'Dancing Script', cursive; }
+
+        /* Elementos Decorativos Flutuantes */
+        .decorative-sunflower {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.1;
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 2px solid rgba(184, 134, 11, 0.3);
+            background: linear-gradient(to bottom, rgba(255, 236, 179, 0.3), transparent);
+        }
+
+        header h1 {
+            font-size: clamp(3rem, 10vw, 5rem);
+            color: var(--sunflower-gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            z-index: 10;
+        }
+
+        header p {
+            font-style: italic;
+            font-weight: 300;
+            max-width: 450px;
+            padding: 0 20px;
+            z-index: 10;
+        }
+
+        /* Container Principal */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        #timeline {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        /* Card de Memória */
+        .card-memoria {
+            background: white;
+            padding: 24px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-top: 8px solid var(--sunflower-yellow);
+            border-radius: 2px;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        @media (min-width: 768px) {
+            .card-memoria { flex-direction: row; }
+            .card-memoria.reverse { flex-direction: row-reverse; }
+        }
+
+        .card-memoria:hover { transform: rotate(0deg) scale(1.02); }
+        .rotate-left { transform: rotate(-1deg); }
+        .rotate-right { transform: rotate(1deg); }
+
+        .foto-container {
+            flex: 1;
+            aspect-ratio: 1 / 1;
+            background-color: #eee;
+            border: 4px solid white;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .foto-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: 0.3s;
+        }
+
+        .foto-container img:hover { filter: grayscale(0%); }
+
+        .conteudo-texto {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .data-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: rgba(255, 236, 179, 0.4);
+            color: var(--sunflower-gold);
+            font-weight: bold;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            width: fit-content;
+            margin-bottom: 15px;
+        }
+
+        .conteudo-texto h2 {
+            font-size: 2.5rem;
+            margin: 0 0 15px 0;
+        }
+
+        .conteudo-texto p {
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Divisor Decorativo */
+        .divider {
+            display: flex;
+            justify-content: center;
+            margin: 80px 0;
+            opacity: 0.4;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--brown-soil);
+            color: var(--warm-cream);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-sunflowers {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-sunflowers svg {
+            fill: var(--sunflower-yellow);
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="decorative-sunflower" style="top: 10%; right: 5%; transform: rotate(12deg);">
+        <svg height="150" width="150" fill="#DAA520" viewBox="0 0 100 100">
+            <path d="M50 0C52 15 65 15 65 35C65 55 52 55 50 70C48 55 35 55 35 35C35 15 48 15 50 0Z" transform="rotate(0 50 50)"></path>
+            <path d="M50 0C52 15 65 15 65 35C65 55 52 55 50 70C48 55 35 55 35 35C35 15 48 15 50 0Z" transform="rotate(45 50 50)"></path>
+            <path d="M50 0C52 15 65 15 65 35C65 55 52 55 50 70C48 55 35 55 35 35C35 15 48 15 50 0Z" transform="rotate(90 50 50)"></path>
+            <circle cx="50" cy="35" fill="#3E2723" r="8"></circle>
+        </svg>
+    </div>
+
+    <header>
+        <h1 class="font-romantic">Nossa História</h1>
+        <p>Como cada pétala de girassol, nossos momentos brilham e se voltam sempre para a luz do nosso amor.</p>
+    </header>
+
+    <main>
+        <section id="timeline">
+            
+            <article class="card-memoria rotate-left">
+                <div class="foto-container">
+                    <img src="imagens/Imagem1.jpeg" alt="Primeiro Encontro">
+                </div>
+                <div class="conteudo-texto">
+                    <span class="data-tag">23 de Março, 2025</span>
+                    <h2 class="font-romantic">O Primeiro Encontro</h2>
+                    <p>Tudo começou em um café pequeno, com cheiro de grãos frescos e uma conversa que parecia não ter fim. Foi ali que percebi que seu sorriso era o meu lugar favorito.</p>
+                </div>
+            </article>
+
+            <article class="card-memoria reverse rotate-right">
+                <div class="foto-container">
+                    <img src="https://via.placeholder.com/400" alt="Viagem">
+                </div>
+                <div class="conteudo-texto">
+                    <span class="data-tag">15 de Janeiro, 2022</span>
+                    <h2 class="font-romantic">Pés na Areia</h2>
+                    <p>A imensidão do mar não chegava perto do tamanho do que eu sentia ao ver o pôr do sol ao seu lado. Uma viagem que guardamos no coração.</p>
+                </div>
+            </article>
+
+            <div style="border: 2px dashed #ccc; padding: 10px; margin-top: 40px;">
+                <p style="font-size: 10px; color: #999; text-align: center;">COPIE O BLOCO ABAIXO PARA NOVAS FOTOS</p>
+                <article class="card-memoria">
+                    <div class="foto-container">
+                        <img src="imagens/Imagem1.jpeg" alt="Nova Memória">
+                    </div>
+                    <div class="conteudo-texto">
+                        <span class="data-tag">00 de Mês, 20XX</span>
+                        <h2 class="font-romantic">Título do Momento</h2>
+                        <p>Escreva aqui o seu texto sobre este momento especial. Conte os detalhes e os sentimentos.</p>
+                    </div>
+                </article>
+            </div>
+
+        </section>
+
+        <div class="divider">
+            <svg height="40" viewbox="0 0 200 40" width="200">
+                <path d="M0 20 Q50 0 100 20 T200 20" fill="none" stroke="#DAA520" stroke-dasharray="5,5" stroke-width="2"></path>
+                <circle cx="100" cy="20" fill="#FFD700" r="10"></circle>
+                <circle cx="100" cy="20" fill="#3E2723" r="4"></circle>
+            </svg>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-sunflowers">
+            <svg viewBox="0 0 24 24"><path d="M12,2L13.5,7.5H19L14.5,11L16,16.5L12,13L8,16.5L9.5,11L5,7.5H10.5L12,2Z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12,2L13.5,7.5H19L14.5,11L16,16.5L12,13L8,16.5L9.5,11L5,7.5H10.5L12,2Z"></path></svg>
+        </div>
+        <p class="font-romantic" style="font-size: 2.5rem; margin: 0;">Para sempre nós.</p>
+        <p style="font-size: 0.9rem; opacity: 0.7;">Criado com amor para celebrar nossa caminhada.</p>
+    </footer>
+
+</body>
+</html>
