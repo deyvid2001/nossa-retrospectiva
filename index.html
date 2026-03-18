@@ -231,6 +231,10 @@
 </head>
 
 <body>
+    <div id="contador-superior">
+        <h4>Nosso tempo juntos</h4>
+        <div id="contador-tempo">Carregando momentos...</div>
+    </div>
 
     <div class="decorative-sunflower" style="top: 10%; right: 5%; transform: rotate(12deg);">
         <svg height="150" width="150" fill="#DAA520" viewBox="0 0 100 100">
@@ -286,7 +290,7 @@
                 </div>
                 <div class="conteudo-texto">
                     <span class="data-tag">29 de Março, 2025</span>
-                    <h2 class="font-romantic">Como somos lindos juntos!</h2>
+                    <h2 class="font-romantic">Como você é linda!</h2>
                     <p>É incrível pensar que existe uma mulher tão linda nesse mundo e ainda mais incrível saber que ela
                         é a minha mulher.
                     </p>
@@ -333,7 +337,161 @@
                 </div>
             </article>
 
+            <article class="card-memoria">
+                <div class="foto-container">
+                    <img src="imagens/imagem7.jpeg" alt="Nova Memória">
+                </div>
+                <div class="conteudo-texto">
+                    <span class="data-tag">23 de Novembro, 2025</span>
+                    <h2 class="font-romantic">1 Ano Após do Primeiro Beijo</h2>
+                    <p>Achou que eu ia esquecer? Claro que não, lembro como se fosse ontem o nosso primeiro beijo,
+                        depois desse dia, nunca
+                        mais nos desgrudamos, lembro da sensação de borboletas no estômago, do frio na barriga, do
+                        sorriso bobo que eu não conseguia tirar do rosto, e claro, da sensação de que tudo estava certo,
+                        que era isso que eu queria para minha vida. E um ano depois, só tenho a agradecer por cada
+                        momento ao seu lado.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card-memoria">
+                <div class="foto-container">
+                    <img src="imagens/imagem8.jpeg" alt="Nova Memória">
+                </div>
+                <div class="conteudo-texto">
+                    <span class="data-tag">23 de Novembro, 2025</span>
+                    <h2 class="font-romantic">Que Sorriso!</h2>
+                    <p>Essa daqui é só para mostrar como seu sorriso é indiscritivelmente lindo, te amo.</p>
+                </div>
+            </article>
+
+            <article class="card-memoria">
+                <div style="flex: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div
+                        style="border: 4px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); aspect-ratio: 3/4; overflow: hidden;">
+                        <img src="imagens/imagem9.jpeg" alt="Foto Grande 1"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div
+                        style="border: 4px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); aspect-ratio: 3/4; overflow: hidden;">
+                        <img src="imagens/imagem10.jpeg" alt="Foto Grande 2"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+
+                <div class="conteudo-texto" style="flex: 1; text-align: center;">
+                    <h2 class="font-romantic" style="font-size: 2.2rem; font-weight: bold; margin: 0;">
+                        E para o final, a nossa foto mais linda, obrigado por ser tão incrível, feliz 1 ano!
+                    </h2>
+                </div>
+            </article>
+
+            <div style="text-align: center; margin: 100px 0; padding: 20px; position: relative; z-index: 20;">
+                <div id="area-botao">
+                    <p
+                        style="font-family: 'Quicksand', sans-serif; color: var(--brown-soil); margin-bottom: 20px; font-weight: 500;">
+                        Nossa história está apenas começando...
+                    </p>
+                    <button onclick="surpresaFinal()" id="btn-futuro" style="background: var(--sunflower-gold); color: white; padding: 18px 40px; border: none; border-radius: 50px; 
+            font-family: 'Quicksand', sans-serif; font-weight: bold; cursor: pointer; box-shadow: 0 10px 20px rgba(184, 134, 11, 0.3); 
+            font-size: 1.3rem; transition: all 0.3s ease; border: 2px solid white;">
+                        Clique para o nosso futuro ➔
+                    </button>
+                </div>
+
+                <div id="mensagem-secreta"
+                    style="display: none; opacity: 0; transform: translateY(20px); transition: all 1.5s ease; margin-top: 50px;">
+                    <h2 class="font-romantic"
+                        style="font-size: clamp(3.5rem, 8vw, 5rem); color: var(--sunflower-gold); text-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+                        Que venham os próximos mil anos ao seu lado! ❤️
+                    </h2>
+                    <p style="font-style: italic; color: var(--brown-soil); opacity: 0.8;">Eu te amo hoje, amanhã e para
+                        sempre.</p>
+                </div>
+            </div>
+
+            <style>
+                #btn-futuro:hover {
+                    transform: scale(1.1);
+                    background: var(--brown-soil);
+                    box-shadow: 0 15px 30px rgba(62, 39, 35, 0.4);
+                }
+
+                @keyframes vibrar {
+                    0% {
+                        transform: translate(0);
+                    }
+
+                    25% {
+                        transform: translate(2px, -2px);
+                    }
+
+                    50% {
+                        transform: translate(-2px, 2px);
+                    }
+
+                    75% {
+                        transform: translate(2px, 2px);
+                    }
+
+                    100% {
+                        transform: translate(0);
+                    }
+                }
+
+                .celebracao-ativa {
+                    animation: vibrar 0.1s infinite;
+                }
+
+                #contador-superior {
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: rgba(255, 255, 255, 0.9);
+                    padding: 15px 20px;
+                    border-radius: 15px;
+                    border: 2px solid var(--sunflower-gold);
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                    z-index: 1000;
+                    text-align: right;
+                    backdrop-filter: blur(5px);
+                    border-top: 5px solid var(--sunflower-gold);
+                }
+
+                #contador-superior h4 {
+                    margin: 0;
+                    font-family: 'Dancing Script', cursive;
+                    color: var(--sunflower-gold);
+                    font-size: 1.4rem;
+                }
+
+                #contador-tempo {
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    color: var(--brown-soil);
+                    margin-top: 5px;
+                }
+
+                @media (max-width: 600px) {
+                    #contador-superior {
+                        padding: 10px;
+                        top: 10px;
+                        right: 10px;
+                    }
+
+                    #contador-superior h4 {
+                        font-size: 1.1rem;
+                    }
+
+                    #contador-tempo {
+                        font-size: 0.7rem;
+                    }
+                }
+            </style>
+
         </section>
+
+
 
         <div class="divider">
             <svg height="40" viewbox="0 0 200 40" width="200">
@@ -355,7 +513,7 @@
             </svg>
         </div>
         <p class="font-romantic" style="font-size: 2.5rem; margin: 0;">Para sempre nós.</p>
-        <p style="font-size: 0.9rem; opacity: 0.7;">É tipo um presente óbvio né? Mas foi criado com amor para celebrar
+        <p style="font-size: 0.9rem; opacity: 0.7;">É um presente óbvio né? Mas foi criado com amor para relembrar
             nossa história.</p>
     </footer>
 
@@ -425,30 +583,70 @@
     </script>
 
     <script>
-        function criarPetala() {
+        function criarPetala(intensa = false) {
             const petala = document.createElement('div');
             petala.className = 'petala';
 
-            const itens = ['🌻', '🍂', '🎇', '☀'];
+            const itens = intensa ? ['🌻', '❤️', '💖', '✨', '💛'] : ['🌻', '🍂', '💛', '☀'];
             petala.innerText = itens[Math.floor(Math.random() * itens.length)];
 
             petala.style.left = Math.random() * 100 + 'vw';
-
             petala.style.fontSize = (Math.random() * 30 + 20) + 'px';
-
-            const duracao = Math.random() * 5 + 5;
+            const duracao = intensa ? (Math.random() * 2 + 2) : (Math.random() * 5 + 5);
             petala.style.animationDuration = duracao + 's';
-
-            petala.style.opacity = Math.random() * 0.5 + 0.3;
+            petala.style.opacity = Math.random() * 0.5 + 0.4;
+            petala.style.zIndex = "100";
 
             document.body.appendChild(petala);
-
-            setTimeout(() => {
-                petala.remove();
-            }, duracao * 1000);
+            setTimeout(() => petala.remove(), duracao * 1000);
         }
 
-        setInterval(criarPetala, 500);
+        let intervaloNormal = setInterval(criarPetala, 500);
+
+        function surpresaFinal() {
+            const msg = document.getElementById('mensagem-secreta');
+            const btnArea = document.getElementById('area-botao');
+
+            btnArea.style.display = 'none';
+            msg.style.display = 'block';
+
+            setTimeout(() => {
+                msg.style.opacity = '1';
+                msg.style.transform = 'translateY(0)';
+            }, 100);
+
+            let c = 0;
+            let intervaloCelebracao = setInterval(() => {
+                criarPetala(true);
+                c++;
+                if (c > 100) clearInterval(intervaloCelebracao); // Para após criar 100 itens
+            }, 50);
+
+            setTimeout(() => {
+                msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 500);
+        }
+
+        function atualizarContador() {
+            // Data de início: 23 de Março de 2025 às 17:00
+            const dataInicio = new Date(2025, 2, 23, 17, 0, 0);
+            const agora = new Date();
+
+            const diferenca = agora - dataInicio;
+
+            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+            document.getElementById('contador-tempo').innerHTML =
+                `${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
+        }
+
+        setInterval(atualizarContador, 1000);
+        atualizarContador();
+
+
     </script>
 
 
